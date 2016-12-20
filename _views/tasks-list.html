@@ -1,0 +1,36 @@
+<div>
+
+    <form id="add-task-form" method="post" ng-submit="addTask(newTask)" >
+        
+        <input type="text" placeholder="Add new task" ng-model="newTask.description"></input>
+        <input type="submit" ng-disabled="!newTask.description" value="go">
+
+    </form>
+
+
+    <!-- tasks view -->
+    <ul>
+
+        <li class="task-wrapper" ng-repeat="task in tasks track by $index" ng-dblclick="showEditingField($index)">
+
+            <input type="checkbox" ng-model="task.completed" ng-change="updateData()"></input>
+
+            <div class="task-wrapper__task-description" ng-class="{'complete': task.completed}">{{task.description}}</div>
+
+            <button class="remove-btn" type="button" ng-click="removeTask($index)">
+                <span></span>
+                <span></span>
+            </button>
+
+            <form method="post" ng-submit="editTask($index)" ng-show="$index === selectedIndex">
+
+                <input class="edit-description" type="text" ng-blur="editTask($index)" value="{{task.description}}"></input>
+
+            </form>
+
+        </li>
+
+    </ul>
+    
+
+</div>

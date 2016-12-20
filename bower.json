@@ -1,0 +1,21 @@
+{
+  "name": "To-Do List",
+  "authors": [
+    "Marco Abilio <marc.e.mailing@gmail.com>"
+  ],
+  "description": "A simple SPA to define a to-do list.",
+  "main": "index.html",
+  "license": "MIT",
+  "homepage": "",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "devDependencies": {
+    "angular": "^1.5.8"
+  }
+}

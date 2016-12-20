@@ -1,0 +1,82 @@
+<!doctype html>
+<html class="no-js" lang="en" ng-app="hallOfIdeas">
+    <head>
+
+        <!--- Meta Info
+        ================================================== -->
+        <title>Welcome to the Hall of Tasks</title>
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <meta name="description" content="">
+        <meta name="author" content="">
+        <meta name="Keywords" content="">
+        <meta name="Copyright" content="Marco Abílio © 2015-2016. All rights reserved.">
+        <meta name="SKYPE_TOOLBAR" content="SKYPE_TOOLBAR_PARSER_COMPATIBLE" />
+    
+        <!--- Responsive Design Specification
+        ================================================== -->
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <!--- Favicons
+        ================================================== -->
+        <link rel="apple-touch-icon" href="_assets/_favicons/apple-touch-icon.png">
+
+        <!--- Stylesheets
+        ================================================== -->
+        <link rel="stylesheet" href="_css/normalize.css">
+        <link rel="stylesheet" href="_css/main.css">
+        <style>[ng-cloak] { display: none; }</style>
+
+        
+        
+    </head>
+
+    <body>
+        <!--[if lt IE 8]>
+            <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+        <![endif]-->
+
+        <!-- Add your site or application content here -->
+        <div id="wrapper">
+
+            <!--- Header (logo)
+            ================================================== -->
+            <header>
+                <div id="logo">
+                    <img src="_assets/hall_of_tasks_logo.png" alt="Hall of Ideas Logo">
+                </div>
+            </header>
+
+            <section>
+
+                <!--- Tasks View
+                ================================================== -->
+                <div ng-view ng-cloak></div>
+                
+            </section>
+
+            <!-- Filtering Options Directive -->
+            <filter-options ng-controller="toDoListController" ng-cloak></filter-options>
+
+            <div ng-cloak id="note">Note: to edit any task, just double-click on it and tap Enter to save changes.</div>
+
+            <footer ng-cloak>Marco Abílio @ 2016.</footer>
+
+        </div>
+
+        <!--- Angular scripts
+        ================================================== -->
+        <script src="bower_components/angular/angular.min.js"></script>
+        <script src="bower_components/angular/angular-route.min.js"></script>
+        <script src="_js/app.js"></script>
+        <script src="_js/_services/tasksService.js"></script>
+        <script src="_js/_routing/routes.js"></script>
+        <script src="_js/_controllers/tasksListCtrl.js"></script> 
+        <script src="_js/_directives/filtering-options.js"></script>
+
+        <!-- jQuery -->
+        <script src="https://code.jquery.com/jquery-1.12.0.min.js"></script>
+        <script>window.jQuery || document.write('<script src="_js/vendor/jquery-1.12.0.min.js"><\/script>')</script>
+
+    </body>
+</html>
